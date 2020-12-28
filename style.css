@@ -3,13 +3,16 @@
   margin: 0;
   padding: 0;
 }
-
+html {
+  height: 100%;
+}
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: white;
   color: black;
   font-size: 15px;
   line-height: 1.5;
+  height: 100%;
 }
 
 a {
@@ -48,10 +51,8 @@ li {
 }
 
 .container {
-  width: 90%;
-  max-width: 1140px;
+  width: min(90%, 1140px);
   margin: auto;
-  height: 100vh;
 }
 
 /* Main classes */
@@ -112,13 +113,14 @@ li {
   align-items: center;
 }
 
-.inner-showcase__img {
-  display: none;
-}
-
 .inner-showcase {
+  height: 100%;
   width: 50%;
   padding: 5%;
+}
+
+.showcase__img {
+  display: none;
 }
 
 .inner-showcase__btns {
@@ -128,12 +130,27 @@ li {
   flex-wrap: wrap;
 }
 
+.quicklinks {
+  margin-top: 1rem;
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.quicklinks__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.quicklinks__icon {
+  font-size: 2rem;
+}
 /* Media Queries */
 @media (max-width: 992px) {
-  .container {
-    width: 100%;
-  }
-
   .burger {
     display: flex;
     font-size: 1.25rem;
@@ -175,23 +192,32 @@ li {
 }
 
 @media (max-width: 786px) {
+  .container {
+    width: 100%;
+  }
   .outer-showcase {
     background-image: none;
     background-color: white;
     width: 100%;
     flex-direction: column;
+    height: auto; /* Faticaccia!! */
   }
 
   .inner-showcase {
+    height: auto;
     width: 100%;
     background-color: rgb(243, 241, 241);
     padding: 100px;
     text-align: center;
     justify-content: center;
   }
-  .inner-showcase__img {
+  .showcase__img {
     display: block;
-    width: 100%;
+    height: 200px;
+    background: url("img/slide.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 90% 10%;
   }
 
   .inner-showcase__btns {
@@ -202,5 +228,18 @@ li {
     margin: auto;
     margin-top: 1rem;
     padding-right: 0;
+  }
+
+  .quicklinks {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quicklinks__item {
+    flex-direction: row;
+  }
+
+  .quicklinks__icon {
+    margin-right: 2rem;
   }
 }
