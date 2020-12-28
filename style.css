@@ -50,6 +50,17 @@ li {
   transition: margin-right 0.2s ease-in-out;
 }
 
+.card .btn {
+  color: rgb(156, 3, 3);
+  margin-left: 0;
+  padding-left: 0;
+  justify-content: flex-start;
+}
+
+.card .btn i {
+  margin-left: 1rem;
+}
+
 .container {
   width: min(90%, 1140px);
   margin: auto;
@@ -149,7 +160,96 @@ li {
 .quicklinks__icon {
   font-size: 2rem;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card > img {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.second-showcase {
+  background-image: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0;
+  margin-top: 2rem;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.second-inner-showcase {
+  display: grid;
+  align-content: center;
+  background-color: rgb(243, 241, 241);
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.second-showcase__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(243, 241, 241);
+  background-size: 100%;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.second-showcase__img img {
+  width: 100%;
+}
+
+.second-cards .card {
+  margin-top: 2.5rem;
+}
+
+.second-cards .card:first-child {
+  margin-top: 0rem;
+}
+
+.second-cards .card h2 {
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.social-pad {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.social-pad a {
+  margin-right: 2rem;
+  color: rgb(141, 141, 141);
+  cursor: pointer;
+}
+.social-pad i {
+  font-size: 2rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 2rem;
+  height: 400px;
+  width: 100%;
+  background-color: rgb(243, 241, 241);
+}
 /* Media Queries */
+
 @media (max-width: 992px) {
   .burger {
     display: flex;
@@ -189,12 +289,13 @@ li {
     width: 90%;
     margin: auto;
   }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 786px) {
-  .container {
-    width: 100%;
-  }
   .outer-showcase {
     background-image: none;
     background-color: white;
@@ -241,5 +342,26 @@ li {
 
   .quicklinks__icon {
     margin-right: 2rem;
+  }
+
+  .second-inner-showcase {
+    padding-top: 0;
+  }
+
+  .second-showcase__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    background-color: rgb(243, 241, 241);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
 }
